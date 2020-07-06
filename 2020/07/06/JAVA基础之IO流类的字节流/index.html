@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>JAVA基础之IO流类的字节流 | MR.WU&#39;s BLOG</title>
+  <title>JAVA基础之IO流基类了解 | MR.WU&#39;s BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="字节流理解  字节流是处理数据单位为字节的IO流，可按数据流方向划分为输入字节流和输出字节流">
+  <meta name="description" content="IO体系的基类  在IO体系中，无论是字节流、字符流，还是输入流、输出流，作为基类，其本身的方法实现思路都有很多的相似之处，因此在说明四个基类的时候会一起总结说明。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JAVA基础之IO流类的字节流">
+<meta property="og:title" content="JAVA基础之IO流基类了解">
 <meta property="og:url" content="http://yoursite.com/2020/07/06/JAVA%E5%9F%BA%E7%A1%80%E4%B9%8BIO%E6%B5%81%E7%B1%BB%E7%9A%84%E5%AD%97%E8%8A%82%E6%B5%81/index.html">
 <meta property="og:site_name" content="MR.WU&#39;s BLOG">
-<meta property="og:description" content="字节流理解  字节流是处理数据单位为字节的IO流，可按数据流方向划分为输入字节流和输出字节流">
+<meta property="og:description" content="IO体系的基类  在IO体系中，无论是字节流、字符流，还是输入流、输出流，作为基类，其本身的方法实现思路都有很多的相似之处，因此在说明四个基类的时候会一起总结说明。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-06T12:23:10.000Z">
-<meta property="article:modified_time" content="2020-07-06T14:13:39.691Z">
+<meta property="article:modified_time" content="2020-07-06T15:57:03.854Z">
 <meta property="article:author" content="X WU">
 <meta property="article:tag" content="JAVA基础">
 <meta name="twitter:card" content="summary">
@@ -162,7 +162,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      JAVA基础之IO流类的字节流
+      JAVA基础之IO流基类了解
     </h1>
   
 
@@ -175,8 +175,30 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="字节流理解"><a href="#字节流理解" class="headerlink" title="字节流理解"></a>字节流理解</h2><p>  字节流是处理数据单位为字节的IO流，可按数据流方向划分为输入字节流和输出字节流</p>
+        <h2 id="IO体系的基类"><a href="#IO体系的基类" class="headerlink" title="IO体系的基类"></a>IO体系的基类</h2><blockquote>
+<p> 在IO体系中，无论是字节流、字符流，还是输入流、输出流，作为基类，其本身的方法实现思路都有很多的相似之处，因此在说明四个基类的时候会一起总结说明。</p>
+</blockquote>
+<a id="more"></a> 
 
+<hr>
+<p>  InputStream 和Reader是所有输入流的抽象基类，因此会有固定的几个方法用于输入流的操作实现</p>
+<p>  InputStream包含的方法：</p>
+<pre><code>int read():从输入流中读取单个字节，返回所读取的字节数据
+int read（byte[]b）:从输入流中读取b.length个字节的数据，并存储与数组b，返回实际读取的字节数
+int read（byte[]b,int off,int len)：从输入流中读取len个字节的数据，从off位置开始存储在数组b中，返回实际读取的字节数</code></pre><p>  Reader包含的方法：</p>
+<pre><code>int read（）:从输入流中读取单个字符，返回所读取的字符数据
+int read（char[]b）：从输入流中最多读取b.length个字符，并存储与数组b，返回实际读取的字符数
+int read（char[]b,int off,int len）：从输入流中读取len个字符，从off位置开始存储在数组b中，返回实际读取的字符数</code></pre><p>  InputStream和Reader同样提供的移动指针的方法</p>
+<pre><code>void mark(int readAheadLimit):在记录指针当前位置记录一个标记（mark）
+boolean markSupported(): 判断此输入流是否支持mark()操作，即是否支持记录标记
+void reset():将此流的记录指针重新定位到上一次记录标记（mark）的位置
+long skip(long n):记录指针向前移动n个字节/字符</code></pre><hr>
+<p>  OutputStream和Writer：<br>  OutputStream和Writer的用法也非常相似，两个流都提供了如下三个方法：</p>
+<pre><code>void write(int c); 将指定的字节/字符输出到输出流中，其中c即可以代表字节，也可以代表字符。
+void write(byte[]/char[] buf); 将字节数组/字符数组中的数据输出到指定输出流中。
+void write(byte[]/char[] buf, int off,int len ); 将字节数组/字符数组中从off位置开始，长度为len的字节/字符输出到输出流中。</code></pre><p>  因为字符流直接以字符作为操作单位，所以Writer可以用字符串来代替字符数组，即以String对象作为参数。Writer里面还包含如下两个方法。</p>
+<pre><code>void write(String str); 将str字符串里包含的字符输出到指定输出流中。
+void write(String str, int off, int len); 将str字符串里面从off位置开始，长度为len的字符输出到指定输出流中。</code></pre>
       
 
       
@@ -328,7 +350,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#字节流理解"><span class="toc-number">1.</span> <span class="toc-text">字节流理解</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#IO体系的基类"><span class="toc-number">1.</span> <span class="toc-text">IO体系的基类</span></a></li></ol>
                     </div>
                 </span>
             </div>
