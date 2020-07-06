@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>关于JAVA基础之IO流认识 | MR.WU&#39;s BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="什么是IO流  IO流从抽象角度来看，就是一个具备输出及接受指定数据的容器，主要作为程序运行内存与文件、设备等数据源传输的数据的操作载体，具备有序性">
+  <meta name="description" content="什么是IO流 取自JAVA编程思想流是各个编程语言的I&#x2F;O类库中常用的抽象概念，它代表任何有能力产出数据的数据源对象或者是有能力接受数据的接受端对象。“流”忽略了实际的I&#x2F;O设备中处理数据的细节。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于JAVA基础之IO流认识">
 <meta property="og:url" content="http://yoursite.com/2020/07/06/%E5%85%B3%E4%BA%8EJAVA%E5%9F%BA%E7%A1%80%E4%B9%8BIO%E6%B5%81%E8%AE%A4%E8%AF%86/index.html">
 <meta property="og:site_name" content="MR.WU&#39;s BLOG">
-<meta property="og:description" content="什么是IO流  IO流从抽象角度来看，就是一个具备输出及接受指定数据的容器，主要作为程序运行内存与文件、设备等数据源传输的数据的操作载体，具备有序性">
+<meta property="og:description" content="什么是IO流 取自JAVA编程思想流是各个编程语言的I&#x2F;O类库中常用的抽象概念，它代表任何有能力产出数据的数据源对象或者是有能力接受数据的接受端对象。“流”忽略了实际的I&#x2F;O设备中处理数据的细节。">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://yoursite.com/2020/07/06/%E5%85%B3%E4%BA%8EJAVA%E5%9F%BA%E7%A1%80%E4%B9%8BIO%E6%B5%81%E8%AE%A4%E8%AF%86/JAVAIO%E6%B5%81.png">
 <meta property="article:published_time" content="2020-07-06T02:24:05.000Z">
-<meta property="article:modified_time" content="2020-07-06T12:32:45.648Z">
+<meta property="article:modified_time" content="2020-07-06T14:22:37.194Z">
 <meta property="article:author" content="X WU">
 <meta property="article:tag" content="JAVA基础">
 <meta name="twitter:card" content="summary">
@@ -177,7 +177,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="什么是IO流"><a href="#什么是IO流" class="headerlink" title="什么是IO流"></a>什么是IO流</h1><p>  IO流从抽象角度来看，就是一个具备输出及接受指定数据的容器，主要作为程序运行内存与文件、设备等数据源传输的数据的操作载体，具备有序性 <a id="more"></a><br>  JAVA的IO流被其按照功能划分为多个类，其中的五个主要的抽象基类为<strong>File</strong>、<strong>InputStream</strong>、<strong>OutputStream</strong>、<strong>Reader</strong>、<strong>Writer</strong></p>
+        <h1 id="什么是IO流"><a href="#什么是IO流" class="headerlink" title="什么是IO流"></a>什么是IO流</h1><blockquote>
+<p>取自JAVA编程思想<br>流是各个编程语言的I/O类库中常用的抽象概念，它代表任何有能力产出数据的数据源对象或者是有能力接受数据的接受端对象。“流”忽略了实际的I/O设备中处理数据的细节。  </p>
+</blockquote>
+<a id="more"></a>
+<p>  JAVA的IO流被其按照功能实现出多个类，其中的五个主要的抽象基类为<strong>File</strong>、<strong>InputStream</strong>、<strong>OutputStream</strong>、<strong>Reader</strong>、<strong>Writer</strong></p>
 <hr>
 <h1 id="IO流的划分"><a href="#IO流的划分" class="headerlink" title="IO流的划分"></a>IO流的划分</h1><p>  IO流有主要三种方式的划分</p>
 <ul>
