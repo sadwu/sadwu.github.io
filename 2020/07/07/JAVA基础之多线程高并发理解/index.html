@@ -6,15 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | MR.WU&#39;s BLOG</title>
+  <title>JAVA基础之多线程高并发理解 | MR.WU&#39;s BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="MR.WU&#39;s BLOG">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="什么是进程（Process）和线程（Thread）  进程是指程序的一次运行，在操作系统下达运行程序的命令后，就会产生进程    进程可理解为程序的真正运行实例，是资源调配的基本单位  线程是CPU的基本调度单位，每个线程执行的都是进程代码的一个片段">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA基础之多线程高并发理解">
+<meta property="og:url" content="http://yoursite.com/2020/07/07/JAVA%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%A4%9A%E7%BA%BF%E7%A8%8B%E9%AB%98%E5%B9%B6%E5%8F%91%E7%90%86%E8%A7%A3/index.html">
 <meta property="og:site_name" content="MR.WU&#39;s BLOG">
+<meta property="og:description" content="什么是进程（Process）和线程（Thread）  进程是指程序的一次运行，在操作系统下达运行程序的命令后，就会产生进程    进程可理解为程序的真正运行实例，是资源调配的基本单位  线程是CPU的基本调度单位，每个线程执行的都是进程代码的一个片段">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/2020/07/07/JAVA%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%A4%9A%E7%BA%BF%E7%A8%8B%E9%AB%98%E5%B9%B6%E5%8F%91%E7%90%86%E8%A7%A3/JAVA%E5%A4%9A%E7%BA%BF%E7%A8%8B.JPG">
+<meta property="og:image" content="http://yoursite.com/2020/07/07/JAVA%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%A4%9A%E7%BA%BF%E7%A8%8B%E9%AB%98%E5%B9%B6%E5%8F%91%E7%90%86%E8%A7%A3/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%B9%B6%E5%8F%91.jpg">
+<meta property="article:published_time" content="2020-07-07T03:20:30.000Z">
+<meta property="article:modified_time" content="2020-07-07T14:23:18.189Z">
 <meta property="article:author" content="X WU">
+<meta property="article:tag" content="JAVA基础">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/07/07/JAVA%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%A4%9A%E7%BA%BF%E7%A8%8B%E9%AB%98%E5%B9%B6%E5%8F%91%E7%90%86%E8%A7%A3/JAVA%E5%A4%9A%E7%BA%BF%E7%A8%8B.JPG">
   
     <link rel="alternative" href="/atom.xml" title="MR.WU&#39;s BLOG" type="application/atom+xml">
   
@@ -150,36 +158,152 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-JAVA基础之多线程高并发理解" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      JAVA基础之多线程高并发理解
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/07/JAVA%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%A4%9A%E7%BA%BF%E7%A8%8B%E9%AB%98%E5%B9%B6%E5%8F%91%E7%90%86%E8%A7%A3/" class="archive-article-date">
+
+        
+        <a href="/2020/07/07/JAVA%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%A4%9A%E7%BA%BF%E7%A8%8B%E9%AB%98%E5%B9%B6%E5%8F%91%E7%90%86%E8%A7%A3/" class="archive-article-date">
   	<time datetime="2020-07-07T03:20:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-07</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/07/JAVA%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%A4%9A%E7%BA%BF%E7%A8%8B%E9%AB%98%E5%B9%B6%E5%8F%91%E7%90%86%E8%A7%A3/">JAVA基础之多线程高并发理解</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="什么是进程（Process）和线程（Thread）"><a href="#什么是进程（Process）和线程（Thread）" class="headerlink" title="什么是进程（Process）和线程（Thread）"></a>什么是进程（Process）和线程（Thread）</h1><p>  进程是指程序的一次运行，在操作系统下达运行程序的命令后，就会产生进程<br>    进程可理解为程序的真正运行实例，是资源调配的基本单位<br>  线程是CPU的基本调度单位，每个线程执行的都是进程代码的一个片段</p>
+<a id="more"></a>
+<p>  操作系统是包含多个进程的容器，而进程是线程的容器，包含存储器等资源，而线程利用这些资源来执行代码，最终产生结果</p>
+<blockquote>
+<p>Oracle官方文档定义：<br>进程使用fork（2）系统调用创建的UNIX环境（例如文件描述符，用户ID等），它被设置为运行程序<br>线程是在进程上下文中执行的一系列指令</p>
+</blockquote>
+<h1 id="线程与进程的关系区别"><a href="#线程与进程的关系区别" class="headerlink" title="线程与进程的关系区别"></a>线程与进程的关系区别</h1><ul>
+<li>起源：先有进程后有线程</li>
+<li>概念：进程是具有一定独立功能的程序关于某个数据集合上的一次运行活动，是系统进行资源分配和调度的一个独立单位；线程是CPU调度单位</li>
+<li>内存共享方式：默认情况下，进程之间无法共享各自占用的内存，需通过内核才能实现；线程共享由操作系统分配给其父进程的相同内存块</li>
+<li>支配资源：进程拥有独立内存，而线程基本不拥有系统资源，只占有一点在运行中所需的资源（如程序计数器，一组寄存器和栈），但可与同属一个进程的其它进程共享进程所拥有的全部资源</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">进程间独享的内容</th>
+<th align="center">进程间共享的内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">线程ID</td>
+<td align="center">进程代码段</td>
+</tr>
+<tr>
+<td align="center">寄存器组的值</td>
+<td align="center">进程公有数据</td>
+</tr>
+<tr>
+<td align="center">线程的堆栈</td>
+<td align="center">进程打开的文件描述符</td>
+</tr>
+<tr>
+<td align="center">错误返回码</td>
+<td align="center">信号的处理器</td>
+</tr>
+<tr>
+<td align="center">线程的信号屏蔽码</td>
+<td align="center">进程的当前目录</td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center">进程用户ID与进程组ID</td>
+</tr>
+</tbody></table>
+<h1 id="JAVA多线程"><a href="#JAVA多线程" class="headerlink" title="JAVA多线程"></a>JAVA多线程</h1><p>  多线程是指在单个进程中运行多个线程，如果一个程序允许俩个或以上的线程，那么就是多线程</p>
+<p>  <img src="/2020/07/07/JAVA%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%A4%9A%E7%BA%BF%E7%A8%8B%E9%AB%98%E5%B9%B6%E5%8F%91%E7%90%86%E8%A7%A3/JAVA%E5%A4%9A%E7%BA%BF%E7%A8%8B.JPG" alt="JAVA多线程"></p>
+<h2 id="多线程的优势"><a href="#多线程的优势" class="headerlink" title="多线程的优势"></a>多线程的优势</h2><p>一是使用多线程最主要的目的是提高CPU利用率</p>
+<ol>
+<li>提高处理速度</li>
+<li>避免无效等待（并行处理、Android开发）</li>
+<li>提高用户体验<br>二是便于编程建模<br>三是阿姆达尔定律已说明，在并行线程占比越大的程序中，其性能越高，接近95%到峰值</li>
+</ol>
+<h2 id="多线程的应用场景"><a href="#多线程的应用场景" class="headerlink" title="多线程的应用场景"></a>多线程的应用场景</h2><ol>
+<li>需要进行耗时任务</li>
+<li>实现多应用多开、后台线程</li>
+<li>需要同时有很大并发量–如压力测试等</li>
+</ol>
+<h2 id="多线程的局限"><a href="#多线程的局限" class="headerlink" title="多线程的局限"></a>多线程的局限</h2><ol>
+<li>上下文切换带来的消耗</li>
+<li>异构化任务难以高效并行</li>
+<li>线程安全问题（a++数据错误、死锁等）  </li>
+</ol>
+<h1 id="关于多线程的串行、并行（Parallelism）、并发（Concurrency）"><a href="#关于多线程的串行、并行（Parallelism）、并发（Concurrency）" class="headerlink" title="关于多线程的串行、并行（Parallelism）、并发（Concurrency）"></a>关于多线程的串行、并行（Parallelism）、并发（Concurrency）</h1><p>  串行：单个任务依次执行<br>  并行：多个任务在同一时间同时执行<br>  并发：并发一般指俩种概念</p>
+<ol>
+<li><p>一个是多个任务的执行状态，即使多个任务在一段时间内交替执行，只要表现出一段时间内的多个线程被同时执行的状态，那么就是并发</p>
+</li>
+<li><p>一个是指的程序的并发性，当一个程序的不同部分具有可以同时执行的性质时，说明这是个并发程序</p>
+<p>并行一定是并发，但并发不一定是并行，俩者在性质上是包含关系</p>
+<p><img src="/2020/07/07/JAVA%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%A4%9A%E7%BA%BF%E7%A8%8B%E9%AB%98%E5%B9%B6%E5%8F%91%E7%90%86%E8%A7%A3/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%B9%B6%E5%8F%91.jpg" alt="JAVA并行与并发"></p>
+</li>
+</ol>
+<h1 id="高并发"><a href="#高并发" class="headerlink" title="高并发"></a>高并发</h1><p> 高并发实际上是一种服务器状态情形，当一个服务器在固定的时间内得接收远超寻常的请求量时，那么就是高并发</p>
+<pre><code>多线程并不是高并发，多线程其实是高并发的一种解决方案，但并不是唯一的解决方案，诸如Redis等也是高并发的解决方案之一</code></pre><p> 高并发有多个衡量指标（斜体加粗为主要指标）：</p>
+<ol>
+<li><strong><em>QPS</em></strong>（Queries-per-second/每秒查询率）</li>
+<li><strong><em>PV</em></strong>（page view/页面浏览量）</li>
+<li><strong><em>UV</em></strong>（Unique Visitor/用户访问量）</li>
+<li>带宽</li>
+<li>吞吐率（Requests per second）</li>
+<li>并发连接数（The number of concurrent connections）</li>
+<li>服务器平均请求等待时间</li>
+</ol>
+<h1 id="同步异步、阻塞非阻塞"><a href="#同步异步、阻塞非阻塞" class="headerlink" title="同步异步、阻塞非阻塞"></a>同步异步、阻塞非阻塞</h1><h2 id="同步、异步"><a href="#同步、异步" class="headerlink" title="同步、异步"></a>同步、异步</h2><p>  同步异步是说明被调用者情况的，例如当用户发出请求、服务器被调用时，如果服务器只在处理完请求才进行响应，那么就是同步，如果服务器会在被调用时返回类似请求处理中的信息让其调用者能再进行操作或请求，那么就是异步</p>
+<h2 id="阻塞、非阻塞"><a href="#阻塞、非阻塞" class="headerlink" title="阻塞、非阻塞"></a>阻塞、非阻塞</h2><p>  阻塞非阻塞是说明调用者情况的，同一个例子，当用户发出请求、服务器被调用时，如果用户在处理结果返回期间无法做任何操作，那么就是阻塞，如果用户在服务器处理请求期间也能进行其它发出请求之类的操作，那么就是非阻塞</p>
+<blockquote>
+<p>同步异步说的是被调用者结果返回时通知进程的一种通知机制，阻塞非阻塞说的是调用结果返回前进程的状态，是挂起还是继续处理其他任务</p>
+</blockquote>
+<pre><code>同步异步、阻塞非阻塞俩者会一起搭配使用，像是出现同步阻塞的情况，或是同步非阻塞、异步阻塞、异步非阻塞</code></pre>
+      
 
-        <div class="article-info info-on-right">
-          
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>gulugulu<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/404.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/404.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -191,209 +315,120 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/07/JAVA%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%A4%9A%E7%BA%BF%E7%A8%8B%E9%AB%98%E5%B9%B6%E5%8F%91%E7%90%86%E8%A7%A3/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/07/JAVA%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E5%9C%B0%E5%9D%80%E6%95%B4%E5%90%88/" class="archive-article-date">
-  	<time datetime="2020-07-07T02:13:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-07</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/07/07/JAVA%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E5%9C%B0%E5%9D%80%E6%95%B4%E5%90%88/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JAVA官方文档地址整合</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/07/JAVA%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E5%9C%B0%E5%9D%80%E6%95%B4%E5%90%88/">JAVA官方文档地址整合</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">JAVA基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#什么是进程（Process）和线程（Thread）"><span class="toc-number">1.</span> <span class="toc-text">什么是进程（Process）和线程（Thread）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#线程与进程的关系区别"><span class="toc-number">2.</span> <span class="toc-text">线程与进程的关系区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JAVA多线程"><span class="toc-number">3.</span> <span class="toc-text">JAVA多线程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#多线程的优势"><span class="toc-number">3.1.</span> <span class="toc-text">多线程的优势</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多线程的应用场景"><span class="toc-number">3.2.</span> <span class="toc-text">多线程的应用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多线程的局限"><span class="toc-number">3.3.</span> <span class="toc-text">多线程的局限</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#关于多线程的串行、并行（Parallelism）、并发（Concurrency）"><span class="toc-number">4.</span> <span class="toc-text">关于多线程的串行、并行（Parallelism）、并发（Concurrency）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#高并发"><span class="toc-number">5.</span> <span class="toc-text">高并发</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#同步异步、阻塞非阻塞"><span class="toc-number">6.</span> <span class="toc-text">同步异步、阻塞非阻塞</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#同步、异步"><span class="toc-number">6.1.</span> <span class="toc-text">同步、异步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#阻塞、非阻塞"><span class="toc-number">6.2.</span> <span class="toc-text">阻塞、非阻塞</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/06/JAVA%E5%9F%BA%E7%A1%80%E4%B9%8BIO%E6%B5%81%E7%B1%BB%E7%9A%84File%E7%B1%BB/" class="archive-article-date">
-  	<time datetime="2020-07-06T12:34:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-06</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/06/JAVA%E5%9F%BA%E7%A1%80%E4%B9%8BIO%E6%B5%81%E7%B1%BB%E7%9A%84File%E7%B1%BB/">JAVA基础之IO流类的File类</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">JAVA基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/06/JAVA%E5%9F%BA%E7%A1%80%E4%B9%8BIO%E6%B5%81%E7%B1%BB%E7%9A%84%E5%AD%97%E8%8A%82%E6%B5%81/" class="archive-article-date">
-  	<time datetime="2020-07-06T12:23:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/06/JAVA%E5%9F%BA%E7%A1%80%E4%B9%8BIO%E6%B5%81%E7%B1%BB%E7%9A%84%E5%AD%97%E8%8A%82%E6%B5%81/">JAVA基础之IO流基类了解</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">JAVA基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/06/%E5%85%B3%E4%BA%8EJAVA%E5%9F%BA%E7%A1%80%E4%B9%8BIO%E6%B5%81%E8%AE%A4%E8%AF%86/" class="archive-article-date">
-  	<time datetime="2020-07-06T02:24:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/06/%E5%85%B3%E4%BA%8EJAVA%E5%9F%BA%E7%A1%80%E4%B9%8BIO%E6%B5%81%E8%AE%A4%E8%AF%86/">关于JAVA基础之IO流认识</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">JAVA基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/04/%E5%85%B3%E4%BA%8EMarkdown%E4%BA%86%E8%A7%A3%E4%B8%8E%E8%AF%AD%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-07-04T03:39:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/04/%E5%85%B3%E4%BA%8EMarkdown%E4%BA%86%E8%A7%A3%E4%B8%8E%E8%AF%AD%E6%B3%95/">关于Markdown了解与语法</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Markdown编辑器</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -423,8 +458,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
